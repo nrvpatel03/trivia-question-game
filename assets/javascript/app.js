@@ -86,8 +86,10 @@ function startbeginning(){
 function nextQuestion(str){
     if(str=="correct"){
         correctNum++;
+        $("#corw").text("You are correct!");
     }else{
         incorrectNum++;
+        $("#corw").text("You are wrong!");
     }
     stop();
     $("#answer").text(answerIs +questionBankObj[questionNum].ans);
@@ -104,6 +106,7 @@ function nextQuestion(str){
     $("#question").text(questionBankObj[questionNum].ques);
     start();
     $("#answer").text("");
+    $("#corw").text("");
     $("#image").attr("src","");
     $("#image").hide();
     $("#truebutton").show();
@@ -119,6 +122,7 @@ function endGame(){
         hidebeginning();
         $("#question").text("Correct: " + correctNum+ "   Incorrect: " + incorrectNum);
         $("#answer").text("");
+        $("#corw").text("");
         $("#startbutton").text("Play Again?");
         questionNum = 0;
         time = 10;
