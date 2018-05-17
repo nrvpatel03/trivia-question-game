@@ -14,6 +14,12 @@ var questionBankObj = [
     {ques: "Giraffes are taller than lions", ans: "t"},
     {ques: "Humans can live up to 1000 years", ans: "f"}
 ];
+
+var images = ["assets/images/question1img.jpg","assets/images/question2img.jpg",
+"assets/images/question3img.png","assets/images/question4img.jpeg",
+"assets/images/question5img.jpg","assets/images/question6img.jpg","assets/images/question7img.jpg",
+"assets/images/question8img.jpg","assets/images/question9img.jpg","assets/images/question10img.jpg"];
+
 //variable to show instructions
 var instructions = "Answer all the questions with true or false within the given time limit"
 //variables for correct and incorrect numbers
@@ -35,6 +41,7 @@ function hidebeginning(){
 $("#truebutton").hide();
 $("#falsebutton").hide();
 $("#timer").hide();
+$("#image").hide();
 $("#startbutton").show();
 $("#question").text(instructions);
 }
@@ -84,6 +91,10 @@ function nextQuestion(str){
     }
     stop();
     $("#answer").text(answerIs +questionBankObj[questionNum].ans);
+    $("#image").show();
+    $("#image").attr("src",images[questionNum]);
+    $("#truebutton").hide();
+    $("#falsebutton").hide();
     questionNum++;
     //if we reach outside our last question, end the game with endgame function.
     if(questionNum>9){
@@ -93,6 +104,10 @@ function nextQuestion(str){
     $("#question").text(questionBankObj[questionNum].ques);
     start();
     $("#answer").text("");
+    $("#image").attr("src","");
+    $("#image").hide();
+    $("#truebutton").show();
+    $("#falsebutton").show();
     },2000);
 }
 
@@ -131,13 +146,6 @@ $(".answer").click(function(){
         nextQuestion("notcorrect");
     }
 })
-
-
-    
-
-
-
-
 });
 
 

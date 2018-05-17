@@ -2,10 +2,16 @@
 .page{
     background-image: url("../images/background.png");
     width: 100%;
-    height: 600px;
+    height: 900px;
+}
+#image{
+    width: 40%;
+    height: auto;
+    margin: 0 auto;
+    background: white;
 }
 .btn{
-    font-size: 30px;
+    font-size: 230%;
     font-family: 'Overpass Mono', monospace;
 }
 .btn-primary{
@@ -17,7 +23,7 @@
 .btn-primary:hover{
     color: blue;
     background: white;
-    font-size: 60px;
+    font-size: 300%;
 }
 .btn-success{
     width: 75%;
@@ -28,7 +34,7 @@
 .btn-success:hover{
     color: green;
     background: white;
-    font-size: 60px;
+    font-size: 300%;
 }
 .btn:focus, .btn:active:focus,.btn.active:focus{
     outline: none;
@@ -43,7 +49,7 @@
 .btn-danger:hover{
     color:red;
     background: white;
-    font-size: 60px;
+    font-size: 300%;
 }
 #title{
     margin-top: 10px;
